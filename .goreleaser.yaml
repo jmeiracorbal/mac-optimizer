@@ -1,0 +1,45 @@
+version: 2
+
+project_name: mac-optimizer
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: mac-optimizer
+    main: ./cmd/mac-optimizer
+    binary: mac-optimizer
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -s -w -X main.version={{.Version}}
+
+archives:
+  - id: default
+    name_template: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}"
+    format: tar.gz
+    files:
+      - LICENSE
+      - README.md
+
+checksum:
+  name_template: checksums.txt
+
+brews:
+  - name: mac-optimizer
+    repository:
+      owner: jmeiracorbal
+      name: homebrew-tools
+    homepage: "https://github.com/jmeiracorbal/mac-optimizer"
+    description: "macOS optimization and cleanup tool"
+    license: MIT
+    install: |
+      bin.install "mac-optimizer"
+    test: |
+      system "#{bin}/mac-optimizer", "--version"

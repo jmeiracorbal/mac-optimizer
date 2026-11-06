@@ -1,0 +1,10 @@
+bin/
+dist/
+*.test
+
+.mnemo
+.codegraph/
+.cursor/
+.pi/
+AGENTS.md
+CLAUDE.md
