@@ -1,5 +1,10 @@
 # mac-optimizer
 
+[![CI](https://github.com/jmeiracorbal/mac-optimizer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/jmeiracorbal/mac-optimizer/actions/workflows/ci.yml)
+[![Go](https://img.shields.io/badge/Go-1.22%2B-00ADD8?logo=go)](https://go.dev/)
+[![Platform](https://img.shields.io/badge/platform-macOS%2012%2B-lightgrey?logo=apple)](https://www.apple.com/macos/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 A command-line tool for running maintenance tasks on macOS. It can clean selected caches and logs, restart a few system processes, and run other cleanup tasks on demand.
 
 The program supports macOS Monterey (12) and later on Intel and Apple Silicon. It uses macOS system utilities and requires Go only when building from source.
