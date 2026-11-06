@@ -36,6 +36,8 @@ brews:
     repository:
       owner: jmeiracorbal
       name: homebrew-tools
+      token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
+    directory: Formula
     homepage: "https://github.com/jmeiracorbal/mac-optimizer"
     description: "macOS optimization and cleanup tool"
     license: MIT
